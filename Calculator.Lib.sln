@@ -7,6 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{72F2866F-933
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calculator.Lib", "src\Calculator.Lib\Calculator.Lib.csproj", "{240CBD13-67BB-4E79-B411-85E521A9BD8C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatorApp", "src\CalculatorApp\CalculatorApp.csproj", "{C26DE412-9312-491D-AD21-A0C5E33995C2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,12 +19,17 @@ Global
 		{240CBD13-67BB-4E79-B411-85E521A9BD8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{240CBD13-67BB-4E79-B411-85E521A9BD8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{240CBD13-67BB-4E79-B411-85E521A9BD8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C26DE412-9312-491D-AD21-A0C5E33995C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C26DE412-9312-491D-AD21-A0C5E33995C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C26DE412-9312-491D-AD21-A0C5E33995C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C26DE412-9312-491D-AD21-A0C5E33995C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{240CBD13-67BB-4E79-B411-85E521A9BD8C} = {72F2866F-933E-42BB-A619-931EFDB7C26D}
+		{C26DE412-9312-491D-AD21-A0C5E33995C2} = {72F2866F-933E-42BB-A619-931EFDB7C26D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D8E8F378-49D5-42EF-B920-F6DD0877DE3C}
