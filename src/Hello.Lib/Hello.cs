@@ -4,7 +4,15 @@ public class Hello
 {
     public string Greetings(string name)
     {
-        return $"Greetings, ${name}";
+        var morning = true;
+        if (morning)
+        {
+            return $"Good morning, ${name}";
+        }
+
+        return $"Good afternoon, ${name}";
+
     }
+
 
 }
