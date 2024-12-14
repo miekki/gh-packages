@@ -31,7 +31,7 @@ jobs:
         run: dotnet test --no-build --verbosity normal
 
       - run: |
-          dotnet nuget add source "https://nuget.pkg.github.com/${{github.repository_owner}}/index.json" --name "github" --username ${{ github.actor }} --password ${{ github.token }} --store-password-in-clear-text
+          dotnet nuget add source "https://nuget.pkg.github.com/${{github.repository_owner}}/index.json" --name "github" --username ${{ github.actor }} --password ${{ secrets.gh_token }} --store-password-in-clear-text
           dotnet build --configuration Release
           dotnet pack src/Calculator.Lib/Calculator.Lib.csproj --output nuget-packages --configuration Release
           dotnet nuget push **/*.nupkg --skip-duplicate -s "https://nuget.pkg.github.com/${{github.repository_owner}}/index.json"
