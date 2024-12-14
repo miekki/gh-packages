@@ -51,6 +51,6 @@ jobs:
             github.rest.git.createRef({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              ref: 'refs/tags/NuGet_1.0.0',
+              ref: 'refs/tags/Calculator.Lib.1.0.2',
               sha: context.sha
             })
