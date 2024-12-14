@@ -6,12 +6,13 @@ name: .NET
 on:
   push:
     branches: ["main"]
-      paths:
-        - 'src/Hello.Lib/**'
+    paths:
+      - "src/Hello.Lib/**"
+
   pull_request:
     branches: ["main"]
-      paths:
-        - 'src/Hello.Lib/**'
+    paths:
+      - "src/Hello.Lib/**"
 
 jobs:
   build:
