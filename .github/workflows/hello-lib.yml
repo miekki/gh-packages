@@ -21,7 +21,7 @@ jobs:
     env:
       projectPath: "src/Hello.Lib/Hello.Lib.csproj"
       projectName: "Hello.Lib"
-      projectVersion: "1.0.4"
+      projectVersion: "1.0.5"
 
     permissions:
       contents: write # to be able to publish a GitHub release

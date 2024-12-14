@@ -21,7 +21,7 @@ jobs:
     env:
       projectPath: "src/Calculator.Lib/Calculator.Lib.csproj"
       projectName: "Calculator.Lib"
-      projectVersion: "1.0.5"
+      projectVersion: "1.0.6"
 
     permissions:
       contents: write # to be able to publish a GitHub release
