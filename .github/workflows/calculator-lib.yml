@@ -11,7 +11,7 @@ on:
 
 permissions:
   contents: read
-  issues: write
+  packages: write
 jobs:
   build:
     runs-on: ubuntu-latest
