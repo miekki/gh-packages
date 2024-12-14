@@ -7,10 +7,10 @@ public class Hello
         var morning = true;
         if (morning)
         {
-            return $"Good morning, ${name}";
+            return $"Good morning, {name}";
         }
 
-        return $"Good afternoon, ${name}";
+        return $"Good afternoon, {name}";
 
     }
 

@@ -8,8 +8,10 @@
     <RepositoryUrl>https://github.com/miekki/gh-packages</RepositoryUrl>
   </PropertyGroup>
 
-  <!-- <ItemGroup>
-    <PackageReference Include="Calculator.Lib" Version="1.0.0" />
-  </ItemGroup> -->
+  <ItemGroup>
+    <PackageReference Include="Calculator.Lib" Version="1.0.4" />
+    <PackageReference Include="Hello.Lib" Version="1.0.2" />
+  </ItemGroup>
 
 </Project>
+
