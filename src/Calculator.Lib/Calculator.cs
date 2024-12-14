@@ -10,4 +10,8 @@ public class Calculator
         return a + b;
     }
 
+    public int Substruct(int a, int b)
+    {
+        return a - b;
+    }
 }
