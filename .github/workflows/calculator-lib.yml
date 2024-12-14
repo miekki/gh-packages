@@ -13,6 +13,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    env:
+      projectPath: "src/Calculator.Lib/Calculator.Lib.csproj"
+      projectName: "Calculator.Lib"
+      projectVersion: "1.0.3"
+
     permissions:
       contents: write # to be able to publish a GitHub release
       issues: write # to be able to comment on released issues
@@ -41,7 +46,7 @@ jobs:
       - run: |
           dotnet nuget add source "https://nuget.pkg.github.com/${{github.repository_owner}}/index.json" --name "github" --username ${{ github.actor }} --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text
           dotnet build --configuration Release
-          dotnet pack src/Calculator.Lib/Calculator.Lib.csproj --output nuget-packages --configuration Release
+          dotnet pack ${{ env.projectPath }} --output nuget-packages --configuration Release
           dotnet nuget push **/*.nupkg --skip-duplicate -s "https://nuget.pkg.github.com/${{github.repository_owner}}/index.json"
         shell: bash
       # secrets.gh_token
@@ -51,6 +56,6 @@ jobs:
             github.rest.git.createRef({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              ref: 'refs/tags/Calculator.Lib.1.0.2',
+              ref: 'refs/tags/${{ env.projectName }}.${{ env.projectVersion }}',
               sha: context.sha
             })
