@@ -48,10 +48,6 @@ runs:
       shell: bash
       run: echo steps.versionize.outcome
 
-    # - name: Commit changes back
-    #   if: github.ref == 'refs/heads/main'
-    #   uses: stefanzweifel/git-auto-commit-action@v5
-
     - name: Publish to GitHub Packages
       if: github.ref == 'refs/heads/main'
       run: |
