@@ -33,7 +33,7 @@ runs:
       run: |
         $versionString = ([xml](Get-Content ${{ inputs.projectPath }})).Project.PropertyGroup.Version
         $version=[version]$versionString
-        echo "Version=$versionString"
+        echo "VersionBefore=$versionString"
 
     - name: Install versionize
       if: github.ref == 'refs/heads/main'
@@ -52,7 +52,7 @@ runs:
       id: versionize
       run: |
         cd ${{ inputs.solutionPath }}
-        versionize --proj-name ${{ inputs.projectName }}
+        versionize
       shell: bash
 
     - name: Get version after
@@ -60,7 +60,7 @@ runs:
       run: |
         $versionString = ([xml](Get-Content ${{ inputs.projectPath }})).Project.PropertyGroup.Version
         $version=[version]$versionString
-        echo "Version=$versionString"
+        echo "VersionAfter=$versionString"
 
     - name: Push changes to GitHub
       if: github.ref == 'refs/heads/main'
