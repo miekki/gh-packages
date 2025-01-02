@@ -6,7 +6,6 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <RepositoryUrl>https://github.com/miekki/gh-packages</RepositoryUrl>
-    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>

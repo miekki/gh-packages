@@ -40,13 +40,15 @@ runs:
     - name: Run versionize
       if: github.ref == 'refs/heads/main'
       id: versionize
-      run: versionize --exit-insignificant-commits
+      run: |
+        cd ${{ inputs.projectPath }}
+        versionize --exit-insignificant-commits
       continue-on-error: true
       shell: bash
 
     - name: versionize status
       shell: bash
-      run: echo ${{ steps.versionize.outcome }}
+      run: echo "This is a result - $steps.versionize.outcome"
 
     - name: Publish to GitHub Packages
       if: github.ref == 'refs/heads/main'
