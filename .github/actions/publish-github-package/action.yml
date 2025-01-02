@@ -51,7 +51,7 @@ runs:
       if: github.ref == 'refs/heads/main'
       id: versionize
       run: |
-        versionize --proj-name ${{ inputs.projectName }}
+        versionize --proj-name=${{ inputs.projectName }}
       shell: bash
 
     - name: Get version after
