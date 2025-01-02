@@ -39,7 +39,8 @@ runs:
 
     - name: Run versionize
       # if: github.ref == 'refs/heads/main'
-      run: versionize --commit-suffix '[skip ci]'
+      run: versionize
+      # --commit-suffix '[skip ci]'
       shell: bash
 
     - name: Commit changes back
