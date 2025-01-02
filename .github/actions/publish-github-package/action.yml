@@ -41,7 +41,7 @@ runs:
       if: github.ref == 'refs/heads/main'
       id: versionize
       run: |
-        cd ${{ inputs.projectPath }}
+        cd ${{ inputs.solutionPath }}
         versionize --exit-insignificant-commits
       continue-on-error: true
       shell: bash
