@@ -50,6 +50,7 @@ public class Calculator
         return a ^ 6;
     }
 
+
 }
 
 
