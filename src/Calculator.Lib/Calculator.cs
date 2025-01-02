@@ -55,6 +55,11 @@ public class Calculator
         return a ^ 7;
     }
 
+    public int PowerOf8(int a)
+    {
+        return a ^ 8;
+    }
+
 
 }
 
