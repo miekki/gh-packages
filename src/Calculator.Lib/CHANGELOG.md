@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file. See [versio
 <a name="1.2.0"></a>
 ## [1.2.0](https://www.github.com/miekki/gh-packages/releases/tag/v1.2.0) (2025-01-02)
 
+### Features
+
+* Power of 5 ([#11](https://www.github.com/miekki/gh-packages/issues/11)) ([078e075](https://www.github.com/miekki/gh-packages/commit/078e07531f103e087c5df53cdd648ae16cee3907))
+
+<a name="1.2.0"></a>
+## [1.2.0](https://www.github.com/miekki/gh-packages/releases/tag/v1.2.0) (2025-01-02)
+
 <a name="1.2.0"></a>
 ## [1.2.0](https://www.github.com/miekki/gh-packages/releases/tag/v1.2.0) (2025-01-02)
 
