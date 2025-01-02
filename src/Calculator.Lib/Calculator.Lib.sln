@@ -5,9 +5,7 @@ VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{72F2866F-933E-42BB-A619-931EFDB7C26D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calculator.Lib", "src\Calculator.Lib\Calculator.Lib.csproj", "{240CBD13-67BB-4E79-B411-85E521A9BD8C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hello.Lib", "src\Hello.Lib\Hello.Lib.csproj", "{4D0F1033-1A80-4ACA-A0A4-3CA07FB97E7E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calculator.Lib", "Calculator.Lib.csproj", "{240CBD13-67BB-4E79-B411-85E521A9BD8C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,7 +27,6 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{240CBD13-67BB-4E79-B411-85E521A9BD8C} = {72F2866F-933E-42BB-A619-931EFDB7C26D}
-		{4D0F1033-1A80-4ACA-A0A4-3CA07FB97E7E} = {72F2866F-933E-42BB-A619-931EFDB7C26D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D8E8F378-49D5-42EF-B920-F6DD0877DE3C}

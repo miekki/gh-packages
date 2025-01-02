@@ -1,0 +1,52 @@
+inputs:
+  solutionPath:
+    required: true
+
+  projectPath:
+    required: true
+
+  githubToken:
+    required: true
+
+runs:
+  using: "composite"
+
+  steps:
+    - name: Setup .Net
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
+
+    - name: Restore dependecnices
+      run: dotnet restore ${{ inputs.solutionPath }}/*.sln
+      shell: bash
+
+    - name: Build
+      run: dotnet build ${{ inputs.solutionPath }}/*.sln --no-restore --configuration release
+      shell: bash
+
+    - name: Install versionize
+      run: dotnet tool install --global Versionize
+      shell: bash
+
+    - name: Configure git user
+      if: github.ref == 'refs/heads/main'
+      run: |
+        git config user.name '${{ github.actor }}'
+        git config user.email '${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com'
+      shell: bash
+
+    - name: Run versionize
+      if: github.ref == 'refs/heads/main'
+      run: versionize --commit-sufix '[skip ci]'
+      shell: bash
+
+    - name: Commit changes back
+      uses: stefanzmeifel/git-auto-commit-action@v5
+
+    - name: Publish to GitHub Packages
+      if: github.ref == 'refs/heads/main'
+      run: |
+        dotnet pack ${{ inputs.projectPath }} --output nuget-packages --configuration Release
+        dotnet nuget push **/*.nupkg --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json --api-key ${{ inputs.githubToken }}"
+      shell: bash
