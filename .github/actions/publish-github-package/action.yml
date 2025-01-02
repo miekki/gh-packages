@@ -52,7 +52,6 @@ runs:
     #   if: github.ref == 'refs/heads/main'
     #   uses: stefanzweifel/git-auto-commit-action@v5
 
-
     - name: Publish to GitHub Packages
       if: github.ref == 'refs/heads/main'
       run: |
@@ -63,6 +62,6 @@ runs:
     - name: Push changes to GitHub
       uses: ad-m/github-push-action@master
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ inputs.githubToken }}
         branch: ${{ github.ref }}
         tags: true
