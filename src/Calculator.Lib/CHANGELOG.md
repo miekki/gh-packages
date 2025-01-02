@@ -2,6 +2,9 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="1.3.1"></a>
+## [1.3.1](https://www.github.com/miekki/gh-packages/releases/tag/v1.3.1) (2025-01-02)
+
 <a name="1.3.0"></a>
 ## [1.3.0](https://www.github.com/miekki/gh-packages/releases/tag/v1.3.0) (2025-01-02)
 
