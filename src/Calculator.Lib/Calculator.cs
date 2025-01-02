@@ -35,6 +35,10 @@ public class Calculator
         return a * a * a;
     }
 
+    public int PowerOf4(int a)
+    {
+        return a * a * a * a;
+    }
 
 
 }
