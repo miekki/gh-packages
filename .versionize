@@ -1,0 +1,56 @@
+{
+    "skipDirty": true,
+    "silent": false,
+    "projects": [
+        {
+            "name": "Calculator.Lib",
+            "path": "src/Calculator.Lib",
+            "tagTemplate": "{name}-v{version}",
+            "changelog": {
+                "header": "Calculator.Lib Changelog",
+                "sections": [
+                    {
+                        "type": "feat",
+                        "section": "✨ Features",
+                        "hidden": false
+                    },
+                    {
+                        "type": "fix",
+                        "section": "🐛 Bug Fixes",
+                        "hidden": false
+                    },
+                    {
+                        "type": "perf",
+                        "section": "🚀 Performance",
+                        "hidden": true
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Hello.Lib",
+            "path": "src/Hello.Lib",
+            "tagTemplate": "{name}-v{version}",
+            "changelog": {
+                "header": "Hello.Lib Changelog",
+                "sections": [
+                    {
+                        "type": "feat",
+                        "section": "✨ Features",
+                        "hidden": false
+                    },
+                    {
+                        "type": "fix",
+                        "section": "🐛 Bug Fixes",
+                        "hidden": false
+                    },
+                    {
+                        "type": "perf",
+                        "section": "🚀 Performance",
+                        "hidden": true
+                    }
+                ]
+            }
+        }
+    ]
+}
