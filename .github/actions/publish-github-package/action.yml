@@ -42,7 +42,7 @@ runs:
       shell: bash
 
     - name: Commit changes back
-      uses: stefanzmeifel/git-auto-commit-action@v5
+      uses: stefanzweifel/git-auto-commit-action@v5
 
     - name: Publish to GitHub Packages
       if: github.ref == 'refs/heads/main'
