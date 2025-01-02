@@ -5,6 +5,23 @@ All notable changes to this project will be documented in this file. See [versio
 <a name="1.2.1"></a>
 ## [1.2.1](https://www.github.com/miekki/gh-packages/releases/tag/v1.2.1) (2025-01-02)
 
+### ✨ Features
+
+* add division ([0ca23b1](https://www.github.com/miekki/gh-packages/commit/0ca23b164a859c9c0bd9d9fe6e473ac9fed9ae99))
+* add power of 2 ([#4](https://www.github.com/miekki/gh-packages/issues/4)) ([bb6a0bd](https://www.github.com/miekki/gh-packages/commit/bb6a0bd1339eef157cbe91dad531053d95304df8))
+* Power of 3 ([#8](https://www.github.com/miekki/gh-packages/issues/8)) ([e9d9625](https://www.github.com/miekki/gh-packages/commit/e9d9625ef28328f6bd3ca6406a216ba157adf724))
+* power of 4 ([#9](https://www.github.com/miekki/gh-packages/issues/9)) ([48039d5](https://www.github.com/miekki/gh-packages/commit/48039d5e543512f10e980173b32fc10043ef8dfa))
+* Power of 5 ([#11](https://www.github.com/miekki/gh-packages/issues/11)) ([078e075](https://www.github.com/miekki/gh-packages/commit/078e07531f103e087c5df53cdd648ae16cee3907))
+* Power of 6 ([#12](https://www.github.com/miekki/gh-packages/issues/12)) ([762a66c](https://www.github.com/miekki/gh-packages/commit/762a66ced01e6b326aaa43894da729ed6dfa6c08))
+* power of 7 ([#14](https://www.github.com/miekki/gh-packages/issues/14)) ([f07982d](https://www.github.com/miekki/gh-packages/commit/f07982d805ab9a74edbdc13d782e4c441537ef55))
+
+### 🐛 Bug Fixes
+
+* Cicd add version check ([#13](https://www.github.com/miekki/gh-packages/issues/13)) ([a6a8f8c](https://www.github.com/miekki/gh-packages/commit/a6a8f8cf6fa123bb2da72157fe9a6379ec6cb4bc))
+
+<a name="1.2.1"></a>
+## [1.2.1](https://www.github.com/miekki/gh-packages/releases/tag/v1.2.1) (2025-01-02)
+
 <a name="1.2.0"></a>
 ## [1.2.0](https://www.github.com/miekki/gh-packages/releases/tag/v1.2.0) (2025-01-02)
 
