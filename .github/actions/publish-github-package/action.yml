@@ -51,8 +51,7 @@ runs:
       if: github.ref == 'refs/heads/main'
       id: versionize
       run: |
-        cd ${{ inputs.solutionPath }}
-        versionize --dry-run
+        versionize --proj-name ${{ inputs.projectName }} --dry-run
         versionize --proj-name ${{ inputs.projectName }}
       shell: bash
 
