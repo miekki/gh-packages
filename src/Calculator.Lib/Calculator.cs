@@ -40,7 +40,10 @@ public class Calculator
         return a * a * a * a;
     }
 
-
+    public int PowerOf5(int a)
+    {
+        return a ^ 5;
+    }
 
 }
 
