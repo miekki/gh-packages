@@ -50,6 +50,11 @@ public class Calculator
         return a ^ 6;
     }
 
+    public int PowerOf7(int a)
+    {
+        return a ^ 7;
+    }
+
 
 }
 
