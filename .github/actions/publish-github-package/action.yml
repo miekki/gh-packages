@@ -39,13 +39,19 @@ runs:
 
     - name: Run versionize
       if: github.ref == 'refs/heads/main'
-      run: versionize
-      # --commit-suffix '[skip ci]'
+      id: versionize
+      run: versionize --exit-insignificant-commits
+      continue-on-error: true
       shell: bash
 
-    - name: Commit changes back
-      if: github.ref == 'refs/heads/main'
-      uses: stefanzweifel/git-auto-commit-action@v5
+    - name: versionize status
+      shell: bash
+      run: echo steps.versionize.outcome
+
+    # - name: Commit changes back
+    #   if: github.ref == 'refs/heads/main'
+    #   uses: stefanzweifel/git-auto-commit-action@v5
+
 
     - name: Publish to GitHub Packages
       if: github.ref == 'refs/heads/main'
@@ -53,3 +59,10 @@ runs:
         dotnet pack ${{ inputs.projectPath }} --output nuget-packages --configuration Release
         dotnet nuget push **/*.nupkg --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" --api-key ${{ inputs.githubToken }}
       shell: bash
+
+    - name: Push changes to GitHub
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.ref }}
+        tags: true
