@@ -46,7 +46,7 @@ runs:
 
     - name: versionize status
       shell: bash
-      run: echo steps.versionize.outcome
+      run: echo ${{ steps.versionize.outcome }}
 
     - name: Publish to GitHub Packages
       if: github.ref == 'refs/heads/main'
