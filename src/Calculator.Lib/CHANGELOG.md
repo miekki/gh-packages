@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="1.2.0"></a>
+## [1.2.0](https://www.github.com/miekki/gh-packages/releases/tag/v1.2.0) (2025-01-02)
+
+### Features
+
+* power of 4 ([#9](https://www.github.com/miekki/gh-packages/issues/9)) ([48039d5](https://www.github.com/miekki/gh-packages/commit/48039d5e543512f10e980173b32fc10043ef8dfa))
+
 <a name="1.1.0"></a>
 ## [1.1.0](https://www.github.com/miekki/gh-packages/releases/tag/v1.1.0) (2025-01-02)
 
