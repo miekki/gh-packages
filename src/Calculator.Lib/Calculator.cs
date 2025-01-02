@@ -45,6 +45,11 @@ public class Calculator
         return a ^ 5;
     }
 
+    public int PowerOf6(int a)
+    {
+        return a ^ 6;
+    }
+
 }
 
 
