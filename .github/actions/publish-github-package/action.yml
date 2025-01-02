@@ -52,6 +52,7 @@ runs:
       id: versionize
       run: |
         cd ${{ inputs.solutionPath }}
+        versionize --dry-run
         versionize
       shell: bash
 
