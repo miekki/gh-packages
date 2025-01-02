@@ -51,7 +51,7 @@ runs:
       if: github.ref == 'refs/heads/main'
       id: versionize
       run: |
-        versionize --workingDir=${{ inputs.projectPath }} --proj-name=${{ inputs.projectName }}
+        versionize --workingDir=${{ inputs.solutionPath }} --proj-name=${{ inputs.projectName }}
       shell: bash
 
     - name: Get version after
