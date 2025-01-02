@@ -24,6 +24,7 @@ permissions:
 env:
   solutionPath: "src/Calculator.Lib"
   projectPath: "src/Calculator.Lib/Calculator.Lib.csproj"
+  projectName: "Calculator.Lib"
 
 jobs:
   build:
@@ -37,6 +38,7 @@ jobs:
         with:
           solutionPath: ${{ env.solutionPath }}
           projectPath: ${{ env.projectPath }}
+          projectName: ${{ env.projectName }}
           githubToken: ${{ secrets.GITHUB_TOKEN }}
 # jobs:
 #   build:
