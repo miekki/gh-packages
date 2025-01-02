@@ -47,11 +47,15 @@ runs:
         git config user.email '${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com'
       shell: bash
 
+    - name: List files
+      shell: bash
+      run: ls -la
+
     - name: Run versionize
       if: github.ref == 'refs/heads/main'
       id: versionize
       run: |
-        versionize --workingDir=${{ inputs.solutionPath }} --proj-name=${{ inputs.projectName }}
+        versionize --proj-name=${{ inputs.projectName }}
       shell: bash
 
     - name: Get version after
