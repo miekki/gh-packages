@@ -62,6 +62,7 @@ runs:
         github_token: ${{ inputs.githubToken }}
         branch: ${{ github.ref }}
         tags: true
+        force: true
 
     - name: Publish to GitHub Packages
       if: github.ref == 'refs/heads/main'
