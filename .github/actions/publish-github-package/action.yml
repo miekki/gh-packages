@@ -48,6 +48,7 @@ runs:
       shell: bash
 
     - name: Versionize version
+      shell: bash
       run: versionize --version
 
     - name: List files
