@@ -24,6 +24,11 @@ public class Calculator
     {
         return a / b;
     }
+
+    public int PowerOf2(int a)
+    {
+        return a * a;
+    }
 }
 
 
