@@ -38,12 +38,12 @@ runs:
       shell: bash
 
     - name: Run versionize
-      if: github.ref == 'refs/heads/main'
+      # if: github.ref == 'refs/heads/main'
       run: versionize --commit-suffix '[skip ci]'
       shell: bash
 
     - name: Commit changes back
-      if: github.ref == 'refs/heads/main'
+      # if: github.ref == 'refs/heads/main'
       uses: stefanzweifel/git-auto-commit-action@v5
 
     - name: Publish to GitHub Packages
