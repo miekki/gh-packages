@@ -1,4 +1,11 @@
 Hello.Lib Changelog
+<a name="1.9.0"></a>
+## [1.9.0](https://www.github.com/miekki/gh-packages/releases/tag/v1.9.0) (2025-01-03)
+
+### ✨ Features
+
+* add gh app ([#28](https://www.github.com/miekki/gh-packages/issues/28)) ([bce497c](https://www.github.com/miekki/gh-packages/commit/bce497ca5031fff70cb5dec9606e395080e74367))
+
 <a name="1.3.0"></a>
 ## [1.3.0](https://www.github.com/miekki/gh-packages/releases/tag/v1.3.0) (2025-01-03)
 
