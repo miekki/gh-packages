@@ -43,3 +43,5 @@ jobs:
           projectName: ${{ env.projectName }}
           githubToken: ${{ secrets.GITHUB_TOKEN }}
           # githubToken: ${{ secrets.PUSHCHANGESVERSIONIZE }}
+          GH_APP_ID: ${{ vars.GH_APP_ID }}
+          GH_APP_PRIVATE_KEY: ${{ secrets.GH_APP_PRIVATE_KEY }}
