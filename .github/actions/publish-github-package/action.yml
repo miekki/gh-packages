@@ -17,6 +17,7 @@ runs:
   steps:
     - name: Obtain a GitHub App Installation Access Token
       id: githubAppAuth
+      shell: bash
       run: |
         TOKEN="$(npx obtain-github-app-installation-access-token ci ${{ secrets.PUSHCHANGESVERSIONIZE }})"
         echo "::add-mask::$TOKEN"
@@ -24,6 +25,7 @@ runs:
         echo "MY_TOKEN=$TOKEN >> $GITHUB_ENV"
 
     - name: Use the obtained token
+      shell: bash
       run: |
         curl -X POST -H 'Content-Type: application/json' \
           -d '{"context":"test","state":"success"}' \
