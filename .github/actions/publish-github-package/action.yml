@@ -69,14 +69,18 @@ runs:
         $version=[version]$versionString
         echo "VersionAfter=$versionString"
 
-    - name: Push changes to GitHub
-      if: github.ref == 'refs/heads/main'
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{ inputs.githubToken }}
-        branch: ${{ github.ref }}
-        tags: true
-        force: true
+    # - name: Push changes to GitHub
+    #   if: github.ref == 'refs/heads/main'
+    #   uses: ad-m/github-push-action@master
+    #   with:
+    #     github_token: ${{ inputs.githubToken }}
+    #     branch: ${{ github.ref }}
+    #     tags: true
+    #     force: true
+
+    - name: Git push tags
+      shell: bash
+      run: git push --tags
 
     - name: Publish to GitHub Packages
       if: github.ref == 'refs/heads/main'
