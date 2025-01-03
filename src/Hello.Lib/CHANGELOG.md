@@ -1,4 +1,12 @@
 Hello.Lib Changelog
+<a name="1.3.0"></a>
+## [1.3.0](https://www.github.com/miekki/gh-packages/releases/tag/v1.3.0) (2025-01-03)
+
+### ✨ Features
+
+* direct update ([06bcd44](https://www.github.com/miekki/gh-packages/commit/06bcd44d5b5682f9af599433182d05d10103c35c))
+* Hello PR Test ([#21](https://www.github.com/miekki/gh-packages/issues/21)) ([93e2339](https://www.github.com/miekki/gh-packages/commit/93e23393fcfa997467fa2202c6a8926323fa7939))
+
 <a name="1.2.0"></a>
 ## [1.2.0](https://www.github.com/miekki/gh-packages/releases/tag/v1.2.0) (2025-01-03)
 
