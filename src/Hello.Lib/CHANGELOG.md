@@ -1,4 +1,12 @@
 Hello.Lib Changelog
+<a name="1.4.0"></a>
+## [1.4.0](https://www.github.com/miekki/gh-packages/releases/tag/v1.4.0) (2025-01-03)
+
+### ✨ Features
+
+* push tags ([#23](https://www.github.com/miekki/gh-packages/issues/23)) ([1ddd332](https://www.github.com/miekki/gh-packages/commit/1ddd3328d22b6074650dfb902de394774c460758))
+* without a push ([#22](https://www.github.com/miekki/gh-packages/issues/22)) ([d65f85f](https://www.github.com/miekki/gh-packages/commit/d65f85f7467a4d800e668ae81ba0f270a97a5c6e))
+
 <a name="1.3.0"></a>
 ## [1.3.0](https://www.github.com/miekki/gh-packages/releases/tag/v1.3.0) (2025-01-03)
 
