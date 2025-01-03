@@ -60,6 +60,10 @@ public class Calculator
         return a ^ 8;
     }
 
+    public int PowerOf9(int a)
+    {
+        return a ^ 9;
+    }
 
 
 
