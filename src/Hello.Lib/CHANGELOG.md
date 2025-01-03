@@ -2,6 +2,13 @@ Hello.Lib Changelog
 <a name="1.10.0"></a>
 ## [1.10.0](https://www.github.com/miekki/gh-packages/releases/tag/v1.10.0) (2025-01-03)
 
+### 🐛 Bug Fixes
+
+* remove empty space ([e63adaa](https://www.github.com/miekki/gh-packages/commit/e63adaaec4af230fc0e7184ce74207a2bdbf8ea2))
+
+<a name="1.10.0"></a>
+## [1.10.0](https://www.github.com/miekki/gh-packages/releases/tag/v1.10.0) (2025-01-03)
+
 ### ✨ Features
 
 * redeploy with new token ([5468547](https://www.github.com/miekki/gh-packages/commit/5468547247b7e6252c1332ad6bc34dba40053a9e))
