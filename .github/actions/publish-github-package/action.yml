@@ -46,7 +46,7 @@ runs:
     - name: Use the token
       shell: bash
       env:
-        GH_TOKEN: ${{ steps.generate-token.outputs.token }}
+        GH_TOKEN: ${{ steps.app-token.outputs.token }}
       run: |
         gh api octocat
 
