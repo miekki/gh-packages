@@ -14,5 +14,9 @@ public class Hello
 
     }
 
+    public string SayMyName(string name)
+    {
+        return $"Your name is {name}"
+    }
 
 }
