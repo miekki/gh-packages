@@ -50,6 +50,13 @@ runs:
       run: |
         gh api octocat
 
+    - uses: actions/checkout@v4
+      with:
+        token: ${{ steps.app-token.outputs.token }}
+        ref: ${{ github.head_ref }}
+        # Make sure the value of GITHUB_TOKEN will not be persisted in repo's config
+        persist-credentials: false
+
     - name: Setup .Net
       uses: actions/setup-dotnet@v4
       with:
