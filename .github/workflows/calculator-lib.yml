@@ -35,9 +35,9 @@ jobs:
         with:
           fetch-depth: "0"
 
-      - name: Check tags
-        shell: bash
-        run: git tag
+      # - name: Check tags
+      #   shell: bash
+      #   run: git tag
 
       - name: Build and Publish
         uses: ./.github/actions/publish-github-package
