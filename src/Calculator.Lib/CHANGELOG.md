@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="1.4.0"></a>
+## [1.4.0](https://www.github.com/miekki/gh-packages/releases/tag/v1.4.0) (2025-01-03)
+
+### ✨ Features
+
+* add git tags ([451fe11](https://www.github.com/miekki/gh-packages/commit/451fe1165f66fa3dfacf86e807f2f04bd0e7097d))
+
 <a name="1.3.2"></a>
 ## [1.3.2](https://www.github.com/miekki/gh-packages/releases/tag/v1.3.2) (2025-01-02)
 
