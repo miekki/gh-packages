@@ -1,4 +1,21 @@
 Hello.Lib Changelog
+<a name="1.11.0"></a>
+## [1.11.0](https://www.github.com/miekki/gh-packages/releases/tag/v1.11.0) (2025-01-03)
+
+### ✨ Features
+
+* another try ([1e215bd](https://www.github.com/miekki/gh-packages/commit/1e215bdc746db5690a43a3649584a0268b5917ca))
+* move to one file ([ae09b2a](https://www.github.com/miekki/gh-packages/commit/ae09b2ad67ec34b405d600410d9402cfcc671b5d))
+* new change ([a01572e](https://www.github.com/miekki/gh-packages/commit/a01572ea9e57f41bd759e799e3d077030c455437))
+* new commit ([c20f7db](https://www.github.com/miekki/gh-packages/commit/c20f7db525b1de521a14249c4115aee40c582d1e))
+* one last time ([a75b8b0](https://www.github.com/miekki/gh-packages/commit/a75b8b022d2c6df0c769ca67f93838d42d09eff4))
+* remove lines ([60a592c](https://www.github.com/miekki/gh-packages/commit/60a592c3545f8d6414e1e13152b202aaed08246d))
+* try again ([38a6732](https://www.github.com/miekki/gh-packages/commit/38a67323b02c78fbc10bbf942ad60740bec6a73a))
+
+### 🐛 Bug Fixes
+
+* redeploy ([6220460](https://www.github.com/miekki/gh-packages/commit/6220460ad287cd23c3e3f5fda593aa6d85e805c7))
+
 <a name="1.10.6"></a>
 ## [1.10.6](https://www.github.com/miekki/gh-packages/releases/tag/v1.10.6) (2025-01-03)
 
