@@ -1,4 +1,11 @@
 Hello.Lib Changelog
+<a name="1.6.0"></a>
+## [1.6.0](https://www.github.com/miekki/gh-packages/releases/tag/v1.6.0) (2025-01-03)
+
+### ✨ Features
+
+* add atomic ([#25](https://www.github.com/miekki/gh-packages/issues/25)) ([2918bb3](https://www.github.com/miekki/gh-packages/commit/2918bb37e19290290465d350d6e72e78308c98df))
+
 <a name="1.3.0"></a>
 ## [1.3.0](https://www.github.com/miekki/gh-packages/releases/tag/v1.3.0) (2025-01-03)
 
