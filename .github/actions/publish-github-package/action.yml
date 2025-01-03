@@ -81,13 +81,6 @@ runs:
     #   shell: bash
     #   run: git push --tags
 
-    - name: Publish to GitHub Packages
-      if: github.ref == 'refs/heads/main'
-      run: |
-        dotnet pack ${{ inputs.projectPath }} --output nuget-packages --configuration Release
-        dotnet nuget push **/*.nupkg --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" --api-key ${{ inputs.githubToken  }}
-      shell: bash
-
     - name: Push changes to GitHub
       if: github.ref == 'refs/heads/main'
       uses: ad-m/github-push-action@master
@@ -96,3 +89,10 @@ runs:
         branch: ${{ github.ref }}
         tags: true
         force: true
+
+    - name: Publish to GitHub Packages
+      if: github.ref == 'refs/heads/main'
+      run: |
+        dotnet pack ${{ inputs.projectPath }} --output nuget-packages --configuration Release
+        dotnet nuget push **/*.nupkg --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" --api-key ${{ inputs.githubToken  }}
+      shell: bash
