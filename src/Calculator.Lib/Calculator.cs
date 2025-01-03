@@ -30,10 +30,10 @@ public class Calculator
     //     return a * a;
     // }
 
-    public int PowerOf3(int a)
-    {
-        return a * a * a;
-    }
+    // public int PowerOf3(int a)
+    // {
+    //     return a * a * a;
+    // }
 
     public int PowerOf4(int a)
     {
