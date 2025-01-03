@@ -20,8 +20,7 @@ runs:
       shell: bash
       run: |
         TOKEN="$(npx obtain-github-app-installation-access-token ci ${{ inputs.githubToken }})"
-        echo "::add-mask::$TOKEN"
-        echo "MY_TOKEN=$TOKEN >> $GITHUB_ENV"
+        echo "MY_TOKEN=${TOKEN}" >> $GITHUB_ENV
 
     # - name: Use the obtained token
     #   shell: bash
