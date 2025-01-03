@@ -56,26 +56,26 @@ jobs:
         shell: bash
 
       - name: Install versionize
-        # if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/main'
         run: dotnet tool install --global Versionize
         shell: bash
 
       - name: Configure git user
-        # if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/main'
         run: |
           git config user.name '${{ github.actor }}'
           git config user.email '${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com'
         shell: bash
 
       - name: Run versionize
-        # if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/main'
         id: versionize
         run: |
           versionize --proj-name=${{ env.projectName }}
         shell: bash
 
       - name: Publish to GitHub Packages
-        # if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/main'
         run: |
           dotnet pack ${{ env.projectPath }} --output nuget-packages --configuration Release
           dotnet nuget push **/*.nupkg --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" --api-key ${{ steps.app-token.outputs.token }}
