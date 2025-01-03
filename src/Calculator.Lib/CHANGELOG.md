@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="2.0.0"></a>
+## [2.0.0](https://www.github.com/miekki/gh-packages/releases/tag/v2.0.0) (2025-01-03)
+
+### ✨ Features
+
+* Remove power of 2 ([3298ad2](https://www.github.com/miekki/gh-packages/commit/3298ad2dd3980490b37f792317c3d048e36f6b28))
+
+### Breaking Changes
+
+* Remove power of 2 ([3298ad2](https://www.github.com/miekki/gh-packages/commit/3298ad2dd3980490b37f792317c3d048e36f6b28))
+
 <a name="1.6.0"></a>
 ## [1.6.0](https://www.github.com/miekki/gh-packages/releases/tag/v1.6.0) (2025-01-03)
 
