@@ -31,17 +31,76 @@ jobs:
     runs-on: ubuntu-24.04
     name: Build and Publish GitHub package
     steps:
-      - uses: actions/checkout@v4
-        # with:
-        #   fetch-depth: "0"
-
-      - name: Build and Publish
-        uses: ./.github/actions/publish-github-package
+      - uses: actions/create-github-app-token@v1
+        id: app-token
         with:
-          solutionPath: ${{ env.solutionPath }}
-          projectPath: ${{ env.projectPath }}
-          projectName: ${{ env.projectName }}
-          githubToken: ${{ secrets.GITHUB_TOKEN }}
-          # githubToken: ${{ secrets.PUSHCHANGESVERSIONIZE }}
-          GH_APP_ID: ${{ vars.GH_APP_ID }}
-          GH_APP_PRIVATE_KEY: ${{ secrets.GH_APP_PRIVATE_KEY }}
+          app-id: ${{ vars.GH_APP_ID }}
+          private-key: ${{ secrets.GH_APP_PRIVATE_KEY }}
+
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: "0"
+          token: ${{ steps.app-token.outputs.token }}
+
+      - name: Setup .Net
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Restore dependecnices
+        run: dotnet restore ${{ env.solutionPath }}/*.sln
+        shell: bash
+
+      - name: Build
+        run: dotnet build ${{ env.solutionPath }}/*.sln --no-restore --configuration release
+        shell: bash
+
+      - name: Install versionize
+        # if: github.ref == 'refs/heads/main'
+        run: dotnet tool install --global Versionize
+        shell: bash
+
+      - name: Configure git user
+        # if: github.ref == 'refs/heads/main'
+        run: |
+          git config user.name '${{ github.actor }}'
+          git config user.email '${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com'
+        shell: bash
+
+      - name: Run versionize
+        # if: github.ref == 'refs/heads/main'
+        id: versionize
+        run: |
+          versionize --proj-name=${{ env.projectName }}
+        shell: bash
+
+      - name: Publish to GitHub Packages
+        # if: github.ref == 'refs/heads/main'
+        run: |
+          dotnet pack ${{ env.projectPath }} --output nuget-packages --configuration Release
+          dotnet nuget push **/*.nupkg --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" --api-key ${{ secrets.GITHUB_TOKEN }}
+        shell: bash
+
+      - name: Push changes to GitHub
+        # if: github.ref == 'refs/heads/main'
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ steps.app-token.outputs.token }}
+          branch: refs/heads/main # ${{ github.ref }}
+          tags: true
+          force: true
+
+        # - uses: actions/checkout@v4
+        #   # with:
+        #   #   fetch-depth: "0"
+
+        # - name: Build and Publish
+        #   uses: ./.github/actions/publish-github-package
+        #   with:
+        #     solutionPath: ${{ env.solutionPath }}
+        #     projectPath: ${{ env.projectPath }}
+        #     projectName: ${{ env.projectName }}
+        #     githubToken: ${{ secrets.GITHUB_TOKEN }}
+        #     # githubToken: ${{ secrets.PUSHCHANGESVERSIONIZE }}
+        #     GH_APP_ID: ${{ vars.GH_APP_ID }}
+        #     GH_APP_PRIVATE_KEY: ${{ secrets.GH_APP_PRIVATE_KEY }}
