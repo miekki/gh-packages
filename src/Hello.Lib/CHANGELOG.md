@@ -1,4 +1,11 @@
 Hello.Lib Changelog
+<a name="1.7.0"></a>
+## [1.7.0](https://www.github.com/miekki/gh-packages/releases/tag/v1.7.0) (2025-01-03)
+
+### ✨ Features
+
+* refactor with push ([#26](https://www.github.com/miekki/gh-packages/issues/26)) ([a3b194f](https://www.github.com/miekki/gh-packages/commit/a3b194f6af5cc8c6cf0593af0533f289b89c1ad0))
+
 <a name="1.3.0"></a>
 ## [1.3.0](https://www.github.com/miekki/gh-packages/releases/tag/v1.3.0) (2025-01-03)
 
