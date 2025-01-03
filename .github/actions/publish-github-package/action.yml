@@ -80,7 +80,7 @@ runs:
 
     - name: Git push tags
       shell: bash
-      run: git push --tags
+      run: git push --tags --follow-tags --force --atomic
 
     - name: Publish to GitHub Packages
       if: github.ref == 'refs/heads/main'
