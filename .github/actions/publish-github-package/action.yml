@@ -75,7 +75,9 @@ runs:
 
     - name: Git push orgin
       shell: bash
-      run: git push origin ${{ github.ref }}
+      run: |
+        echo "Source branch is ${{ github.head_ref }}"
+        git push origin ${{ github.head_ref }}
 
     - name: Publish to GitHub Packages
       if: github.ref == 'refs/heads/main'
