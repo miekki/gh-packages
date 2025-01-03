@@ -78,6 +78,10 @@ runs:
     #     tags: true
     #     force: true
 
+    - name: Git push tags
+      shell: bash
+      run: git push --tags
+
     - name: Publish to GitHub Packages
       if: github.ref == 'refs/heads/main'
       run: |
