@@ -108,4 +108,3 @@ runs:
         dotnet pack ${{ inputs.projectPath }} --output nuget-packages --configuration Release
         dotnet nuget push **/*.nupkg --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" --api-key ${{ inputs.githubToken }}
       shell: bash
-      # ${{ steps.app-token.outputs.token }}
