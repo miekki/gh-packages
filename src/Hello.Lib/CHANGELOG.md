@@ -1,4 +1,13 @@
 Hello.Lib Changelog
+<a name="1.2.0"></a>
+## [1.2.0](https://www.github.com/miekki/gh-packages/releases/tag/v1.2.0) (2025-01-03)
+
+### ✨ Features
+
+* direct update ([#20](https://www.github.com/miekki/gh-packages/issues/20)) ([8635b83](https://www.github.com/miekki/gh-packages/commit/8635b831bf482347773212e9ad017689fc3ac031))
+* Formatted greetings ([#18](https://www.github.com/miekki/gh-packages/issues/18)) ([0ec6dae](https://www.github.com/miekki/gh-packages/commit/0ec6dae8416ecc6498c7f6a94683e0501a0d9780))
+* test change ([#19](https://www.github.com/miekki/gh-packages/issues/19)) ([52a3014](https://www.github.com/miekki/gh-packages/commit/52a3014a85344c5e32c2ff1b429e4ac45ce664f6))
+
 <a name="1.1.0"></a>
 ## [1.1.0](https://www.github.com/miekki/gh-packages/releases/tag/v1.1.0) (2025-01-03)
 
