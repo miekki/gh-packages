@@ -65,6 +65,10 @@ public class Calculator
         return a ^ 9;
     }
 
+    public int PowerOfAny(int a, int b)
+    {
+        return a ^ b;
+    }
 
 
 }
