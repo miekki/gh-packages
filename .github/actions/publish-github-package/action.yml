@@ -43,6 +43,12 @@ runs:
         app-id: ${{ inputs.GH_APP_ID }}
         private-key: ${{ inputs.GH_APP_PRIVATE_KEY }}
 
+    - name: Use the token
+      env:
+        GH_TOKEN: ${{ steps.generate-token.outputs.token }}
+      run: |
+        gh api octocat
+
     - name: Setup .Net
       uses: actions/setup-dotnet@v4
       with:
