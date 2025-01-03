@@ -1,4 +1,11 @@
 Hello.Lib Changelog
+<a name="1.1.0"></a>
+## [1.1.0](https://www.github.com/miekki/gh-packages/releases/tag/v1.1.0) (2025-01-03)
+
+### ✨ Features
+
+* Say my name 2 ([d2902ca](https://www.github.com/miekki/gh-packages/commit/d2902ca19f429c1bf209493d740b0d5337560291))
+
 <a name="1.0.0"></a>
 ## [1.0.0](https://www.github.com/miekki/gh-packages/releases/tag/v1.0.0) (2025-01-03)
 
