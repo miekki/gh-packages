@@ -19,5 +19,10 @@ public class Hello
         return $"Your name is {name}";
     }
 
+    public string FormatedGreetings(string name)
+    {
+        return $"Good morning, {name}. How do you do today?";
+    }
+
 
 }
