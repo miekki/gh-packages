@@ -119,6 +119,6 @@ runs:
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ steps.app-token.outputs.token }}
-        branch: ${{ github.ref }}
+        branch: refs/heads/main # ${{ github.ref }}
         tags: true
         force: true
