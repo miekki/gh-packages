@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="1.5.0"></a>
+## [1.5.0](https://www.github.com/miekki/gh-packages/releases/tag/v1.5.0) (2025-01-03)
+
+### ✨ Features
+
+* Add Power of 9 ([c13d157](https://www.github.com/miekki/gh-packages/commit/c13d15768c178defbb4186a8eda0270778958cca))
+
 <a name="1.4.0"></a>
 ## [1.4.0](https://www.github.com/miekki/gh-packages/releases/tag/v1.4.0) (2025-01-03)
 
