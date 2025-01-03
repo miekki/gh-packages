@@ -78,15 +78,15 @@ jobs:
         # if: github.ref == 'refs/heads/main'
         run: |
           dotnet pack ${{ env.projectPath }} --output nuget-packages --configuration Release
-          dotnet nuget push **/*.nupkg --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" --api-key ${{ secrets.GITHUB_TOKEN }}
+          dotnet nuget push **/*.nupkg --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" --api-key ${{ steps.app-token.outputs.token }}
         shell: bash
 
       - name: Push changes to GitHub
-        # if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/main'
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ steps.app-token.outputs.token }}
-          branch: refs/heads/main # ${{ github.ref }}
+          branch: ${{ github.ref }}
           tags: true
           force: true
 
