@@ -74,28 +74,29 @@ jobs:
           versionize --proj-name=${{ env.projectName }}
         shell: bash
 
-      - name: Publish to GitHub Packages
-        if: github.ref == 'refs/heads/main'
-        run: |
-          dotnet pack ${{ env.projectPath }} --output nuget-packages --configuration Release
-          dotnet nuget push **/*.nupkg --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" --api-key ${{ steps.app-token.outputs.token }}
-        shell: bash
-
       - name: Commit changes
         shell: bash
+        if: github.ref == 'refs/heads/main'
         run: |
           git add .
           git commit -m "chore: release 2.3.4"
           git push
 
-      # - name: Push changes to GitHub
-      #   if: github.ref == 'refs/heads/main'
-      #   uses: ad-m/github-push-action@master
-      #   with:
-      #     github_token: ${{ steps.app-token.outputs.token }}
-      #     branch: ${{ github.ref }}
-      #     tags: true
-      #     force: true
+      - name: Publish to GitHub Packages
+        if: github.ref == 'refs/heads/main'
+        run: |
+          dotnet pack ${{ env.projectPath }} --output nuget-packages --configuration Release
+          dotnet nuget push **/*.nupkg --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" --api-key ${{ secrets.GITHUB_TOKEN }}
+        shell: bash
+
+      - name: Push changes to GitHub
+        if: github.ref == 'refs/heads/main'
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ steps.app-token.outputs.token }}
+          branch: ${{ github.ref }}
+          tags: true
+          force: true
 
       # - uses: actions/checkout@v4
       #   # with:
