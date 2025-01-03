@@ -56,51 +56,58 @@ jobs:
         shell: bash
 
       - name: Install versionize
-        # if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/main'
         run: dotnet tool install --global Versionize
         shell: bash
 
       - name: Configure git user
-        # if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/main'
         run: |
           git config user.name '${{ github.actor }}'
           git config user.email '${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com'
         shell: bash
 
       - name: Run versionize
-        # if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/main'
         id: versionize
         run: |
           versionize --proj-name=${{ env.projectName }}
         shell: bash
 
       - name: Publish to GitHub Packages
-        # if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/main'
         run: |
           dotnet pack ${{ env.projectPath }} --output nuget-packages --configuration Release
-          dotnet nuget push **/*.nupkg --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" --api-key ${{ secrets.GITHUB_TOKEN }}
+          dotnet nuget push **/*.nupkg --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" --api-key ${{ steps.app-token.outputs.token }}
         shell: bash
 
-      - name: Push changes to GitHub
-        # if: github.ref == 'refs/heads/main'
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ steps.app-token.outputs.token }}
-          branch: refs/heads/main # ${{ github.ref }}
-          tags: true
-          force: true
+      - name: Commit changes
+        shell: bash
+        run: |
+          git add .
+          git commit -m "chore: release 2.3.4"
+          git push
 
-        # - uses: actions/checkout@v4
-        #   # with:
-        #   #   fetch-depth: "0"
+      # - name: Push changes to GitHub
+      #   if: github.ref == 'refs/heads/main'
+      #   uses: ad-m/github-push-action@master
+      #   with:
+      #     github_token: ${{ steps.app-token.outputs.token }}
+      #     branch: ${{ github.ref }}
+      #     tags: true
+      #     force: true
 
-        # - name: Build and Publish
-        #   uses: ./.github/actions/publish-github-package
-        #   with:
-        #     solutionPath: ${{ env.solutionPath }}
-        #     projectPath: ${{ env.projectPath }}
-        #     projectName: ${{ env.projectName }}
-        #     githubToken: ${{ secrets.GITHUB_TOKEN }}
-        #     # githubToken: ${{ secrets.PUSHCHANGESVERSIONIZE }}
-        #     GH_APP_ID: ${{ vars.GH_APP_ID }}
-        #     GH_APP_PRIVATE_KEY: ${{ secrets.GH_APP_PRIVATE_KEY }}
+      # - uses: actions/checkout@v4
+      #   # with:
+      #   #   fetch-depth: "0"
+
+      # - name: Build and Publish
+      #   uses: ./.github/actions/publish-github-package
+      #   with:
+      #     solutionPath: ${{ env.solutionPath }}
+      #     projectPath: ${{ env.projectPath }}
+      #     projectName: ${{ env.projectName }}
+      #     githubToken: ${{ secrets.GITHUB_TOKEN }}
+      #     # githubToken: ${{ secrets.PUSHCHANGESVERSIONIZE }}
+      #     GH_APP_ID: ${{ vars.GH_APP_ID }}
+      #     GH_APP_PRIVATE_KEY: ${{ secrets.GH_APP_PRIVATE_KEY }}
