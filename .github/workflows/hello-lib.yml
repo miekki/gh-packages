@@ -41,4 +41,5 @@ jobs:
           solutionPath: ${{ env.solutionPath }}
           projectPath: ${{ env.projectPath }}
           projectName: ${{ env.projectName }}
-          githubToken: ${{ secrets.GITHUB_TOKEN }}
+          # githubToken: ${{ secrets.GITHUB_TOKEN }}
+          githubToken: ${{ secrets.PUSHCHANGESVERSIONIZE }}
