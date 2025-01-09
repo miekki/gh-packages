@@ -1,4 +1,11 @@
 Hello.Lib Changelog
+<a name="1.12.0"></a>
+## [1.12.0](https://www.github.com/miekki/gh-packages/releases/tag/v1.12.0) (2025-01-09)
+
+### ✨ Features
+
+* test 222 ([#37](https://www.github.com/miekki/gh-packages/issues/37)) ([5f6c5bb](https://www.github.com/miekki/gh-packages/commit/5f6c5bb0105999ce34a718bd8a9caeb58e7ffc94))
+
 <a name="1.11.4"></a>
 ## [1.11.4](https://www.github.com/miekki/gh-packages/releases/tag/v1.11.4) (2025-01-03)
 
