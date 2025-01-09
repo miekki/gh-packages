@@ -31,6 +31,12 @@ jobs:
     runs-on: ubuntu-24.04
     name: Build and Publish GitHub package
     steps:
+      - name: Get the event name
+        shell: bash
+        run: |
+          echo "Event name is: ${{ github.event_name }}"
+          echo "Event tyoe is: ${{ github.event.action }}"
+
       - uses: actions/create-github-app-token@v1
         id: app-token
         with:
@@ -86,7 +92,6 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ steps.app-token.outputs.token }}
-          # github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.ref }}
           tags: true
           force: true
