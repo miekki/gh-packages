@@ -31,16 +31,16 @@ jobs:
     runs-on: ubuntu-24.04
     name: Build and Publish GitHub package
     steps:
-      # - uses: actions/create-github-app-token@v1
-      #   id: app-token
-      #   with:
-      #     app-id: ${{ vars.GH_APP_ID }}
-      #     private-key: ${{ secrets.GH_APP_PRIVATE_KEY }}
+      - uses: actions/create-github-app-token@v1
+        id: app-token
+        with:
+          app-id: ${{ vars.GH_APP_ID }}
+          private-key: ${{ secrets.GH_APP_PRIVATE_KEY }}
 
       - uses: actions/checkout@v4
         with:
           fetch-depth: "0"
-          # token: ${{ steps.app-token.outputs.token }}
+          token: ${{ steps.app-token.outputs.token }}
 
       - name: Setup .Net
         uses: actions/setup-dotnet@v4
@@ -85,11 +85,11 @@ jobs:
         if: github.ref == 'refs/heads/main'
         uses: ad-m/github-push-action@master
         with:
-          # github_token: ${{ steps.app-token.outputs.token }}
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ steps.app-token.outputs.token }}
+          # github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.ref }}
           tags: true
-          # force: true
+          force: true
 
       # - uses: actions/checkout@v4
       #   # with:
