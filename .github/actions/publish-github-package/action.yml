@@ -78,10 +78,6 @@ runs:
         $version=[version]$versionString
         echo "VersionAfter=$versionString"
 
-    # - name: Git push tags
-    #   shell: bash
-    #   run: git push --tags
-
     - name: Publish to GitHub Packages
       if: github.ref == 'refs/heads/main'
       run: |
