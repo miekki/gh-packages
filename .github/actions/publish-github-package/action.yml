@@ -32,20 +32,6 @@ runs:
         fetch-depth: "0"
         token: ${{ steps.app-token.outputs.token }}
 
-    # - name: Use the token
-    #   shell: bash
-    #   env:
-    #     GH_TOKEN: ${{ steps.app-token.outputs.token }}
-    #   run: |
-    #     gh api octocat
-
-    # - uses: actions/checkout@v4
-    #   with:
-    #     token: ${{ steps.app-token.outputs.token }}
-    #     ref: ${{ github.head_ref }}
-    #     # Make sure the value of GITHUB_TOKEN will not be persisted in repo's config
-    #     persist-credentials: false
-
     - name: Setup .Net
       uses: actions/setup-dotnet@v4
       with:
@@ -59,55 +45,55 @@ runs:
       run: dotnet build ${{ inputs.solutionPath }}/*.sln --no-restore --configuration release
       shell: bash
 
-    # - name: Get version before
-    #   shell: pwsh
-    #   run: |
-    #     $versionString = ([xml](Get-Content ${{ inputs.projectPath }})).Project.PropertyGroup.Version
-    #     $version=[version]$versionString
-    #     echo "VersionBefore=$versionString"
+    - name: Get version before
+      shell: pwsh
+      run: |
+        $versionString = ([xml](Get-Content ${{ inputs.projectPath }})).Project.PropertyGroup.Version
+        $version=[version]$versionString
+        echo "VersionBefore=$versionString"
 
     - name: Install versionize
-      # if: github.ref == 'refs/heads/main'
+      if: github.ref == 'refs/heads/main'
       run: dotnet tool install --global Versionize
       shell: bash
 
     - name: Configure git user
-      # if: github.ref == 'refs/heads/main'
+      if: github.ref == 'refs/heads/main'
       run: |
         git config user.name '${{ github.actor }}'
         git config user.email '${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com'
       shell: bash
 
     - name: Run versionize
-      # if: github.ref == 'refs/heads/main'
+      if: github.ref == 'refs/heads/main'
       id: versionize
       run: |
         versionize --proj-name=${{ inputs.projectName }}
       shell: bash
 
-    # - name: Get version after
-    #   shell: pwsh
-    #   run: |
-    #     $versionString = ([xml](Get-Content ${{ inputs.projectPath }})).Project.PropertyGroup.Version
-    #     $version=[version]$versionString
-    #     echo "VersionAfter=$versionString"
+    - name: Get version after
+      shell: pwsh
+      run: |
+        $versionString = ([xml](Get-Content ${{ inputs.projectPath }})).Project.PropertyGroup.Version
+        $version=[version]$versionString
+        echo "VersionAfter=$versionString"
 
     # - name: Git push tags
     #   shell: bash
     #   run: git push --tags
 
     - name: Publish to GitHub Packages
-      # if: github.ref == 'refs/heads/main'
+      if: github.ref == 'refs/heads/main'
       run: |
         dotnet pack ${{ inputs.projectPath }} --output nuget-packages --configuration Release
         dotnet nuget push **/*.nupkg --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" --api-key ${{ inputs.githubToken }}
       shell: bash
 
     - name: Push changes to GitHub
-      # if: github.ref == 'refs/heads/main'
+      if: github.ref == 'refs/heads/main'
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ steps.app-token.outputs.token }}
         branch: refs/heads/main # ${{ github.ref }}
         tags: true
-        force: true
+        # force: true
