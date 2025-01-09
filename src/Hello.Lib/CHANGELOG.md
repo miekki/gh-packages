@@ -1,4 +1,7 @@
 Hello.Lib Changelog
+<a name="1.12.118"></a>
+## [1.12.118](https://www.github.com/miekki/gh-packages/releases/tag/v1.12.118) (2025-01-09)
+
 <a name="1.12.117"></a>
 ## [1.12.117](https://www.github.com/miekki/gh-packages/releases/tag/v1.12.117) (2025-01-09)
 
