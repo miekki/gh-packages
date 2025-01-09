@@ -64,6 +64,11 @@ runs:
         git config user.email '${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com'
       shell: bash
 
+    - name: List data
+      shell: bash
+      run: |
+        echo GitHub Actor ${{ github.actor }}
+
     - name: Run versionize
       if: github.ref == 'refs/heads/main'
       id: versionize
