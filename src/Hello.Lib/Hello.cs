@@ -24,6 +24,4 @@ public class Hello
         return $"Good morning, {name}. How do you do today?";
     }
 
-
-
 }
