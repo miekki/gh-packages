@@ -96,6 +96,6 @@ runs:
       with:
         # github_token: ${{ steps.app-token.outputs.token }}
         github_token: ${{ inputs.githubToken }}
-        branch: refs/heads/main # ${{ github.ref }}
+        branch: ${{ github.ref }}
         tags: true
         # force: true
