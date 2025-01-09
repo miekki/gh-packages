@@ -74,13 +74,13 @@ jobs:
           versionize --proj-name=${{ env.projectName }}
         shell: bash
 
-      - name: Commit changes
-        shell: bash
-        if: github.ref == 'refs/heads/main'
-        run: |
-          git add .
-          git commit -m "chore: release 2.3.4"
-          git push
+      # - name: Commit changes
+      #   shell: bash
+      #   if: github.ref == 'refs/heads/main'
+      #   run: |
+      #     git add .
+      #     git commit -m "chore: release 2.3.4"
+      #     git push
 
       - name: Publish to GitHub Packages
         if: github.ref == 'refs/heads/main'
